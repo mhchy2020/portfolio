@@ -166,25 +166,22 @@ nav{
 
 /* SKILLS */
 
-.skill{
-    margin-bottom:18px;
+.skill-heading::before{
+    content: "•";
+    font-size: 1.5rem;
+    color: #38bdf8;
+    margin-right: 8px;
 }
 
-.skill-title{
-    margin-bottom:6px;
+.skill-heading {
+    color: #38bdf8;
+    font-weight: bold;
 }
 
-.skill-bar{
-    height:12px;
-    background:#111827;
-    border-radius:50px;
-    overflow:hidden;
+.skill-list{
+    margin-left: 18px;
 }
 
-.fill{
-    height:100%;
-    background:var(--accent);
-}
 
 /* LINKS */
 
@@ -397,7 +394,7 @@ Download Resume
 <h3>Citixp</h3>
 
 <p>
-<i>Software developer | Aug 2025 - May 2026</i><br><br>
+<i>Software developer | Aug 2025 - May 2026<br>Syndey, NSW</i><br><br>
 • Developed and maintained a cross-platform mobile
 application using React Native and Expo<br>
 • Built backend services using Next.js, Prisma ORM,
@@ -473,56 +470,32 @@ full-stack environment<br>
 <!-- SKILLS -->
 
 <div id="skills" class="section">
+    <h2>Technical Skills</h2>
 
-<h2>Technical Skills</h2>
-
-<div class="skill">
-<div class="skill-title">React Native</div>
-<div class="skill-bar">
-<div class="fill" style="width:90%"></div>
-</div>
+<div class="skill-row">
+    <span class="skill-heading">Frontend:</span>
+    TypeScript, JavaScript, React.js, React Native, REST APIs, HTML/CSS, Expo, Jest
+    
 </div>
 
-<div class="skill">
-<div class="skill-title">TypeScript</div>
-<div class="skill-bar">
-<div class="fill" style="width:85%"></div>
-</div>
+<div class="skill-row">
+    <span class="skill-heading">Backend:</span>
+    Node.js, Express.js, Next.js
 </div>
 
-<div class="skill">
-<div class="skill-title">Next.js</div>
-<div class="skill-bar">
-<div class="fill" style="width:85%"></div>
-</div>
+<div class="skill-row">
+    <span class="skill-heading">Database:</span>
+    PostgreSQL, SQL, Prisma
 </div>
 
-<div class="skill">
-<div class="skill-title">Node.js</div>
-<div class="skill-bar">
-<div class="fill" style="width:80%"></div>
-</div>
+<div class="skill-row">
+    <span class="skill-heading">Languages:</span>
+    Python, Java, C/C++, Bash, Shell
 </div>
 
-<div class="skill">
-<div class="skill-title">PostgreSQL</div>
-<div class="skill-bar">
-<div class="fill" style="width:75%"></div>
-</div>
-</div>
-
-<div class="skill">
-<div class="skill-title">Python</div>
-<div class="skill-bar">
-<div class="fill" style="width:80%"></div>
-</div>
-</div>
-
-<div class="skill">
-<div class="skill-title">AWS</div>
-<div class="skill-bar">
-<div class="fill" style="width:60%"></div>
-</div>
+<div class="skill-row">
+    <span class="skill-heading">Tools:</span>
+    Docker, VS Code, WSL, Git, JIRA, Confluence, Postman
 </div>
 
 </div>
