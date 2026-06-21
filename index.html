@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maharshi Chaudhary | Software Engineer</title>
+
+<style>
+:root{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --card2:#334155;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --accent:#38bdf8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    height:100vh;
+    overflow:hidden;
+    font-family:Segoe UI, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+}
+
+/* NAVBAR */
+
+nav{
+    height:70px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+    background:rgba(15,23,42,0.95);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.nav-links button{
+    background:none;
+    border:none;
+    color:white;
+    cursor:pointer;
+    font-size:0.95rem;
+    padding:8px 14px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.nav-links button:hover,
+.nav-links button.active{
+    background:var(--accent);
+    color:black;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:20px;
+    flex-shrink:0;
+}
+
+.profile-pic{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid var(--accent);
+    margin-bottom:12px;
+}
+
+.hero h1{
+    font-size:2rem;
+}
+
+.hero p{
+    color:var(--muted);
+    margin-top:6px;
+}
+
+/* CONTENT PANEL */
+
+.content-container{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    padding:0 25px 20px;
+    min-height:0;
+}
+
+.content-panel{
+    width:100%;
+    max-width:1000px;
+    background:var(--card);
+    border-radius:16px;
+    padding:25px;
+    overflow-y:auto;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* SECTIONS */
+
+.section{
+    display:none;
+}
+
+.section.active{
+    display:block;
+}
+
+.section h2{
+    margin-bottom:15px;
+    color:var(--accent);
+}
+
+.section p{
+    line-height:1.7;
+    margin-bottom:10px;
+}
+
+.details{
+    display: flex;
+    gap: 10px;
+}
+
+/* PROJECTS */
+
+.project{
+    background:var(--card2);
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+/* EXPERIENCE */
+
+.experience{
+    background:var(--card2);
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+/* SKILLS */
+
+.skill{
+    margin-bottom:18px;
+}
+
+.skill-title{
+    margin-bottom:6px;
+}
+
+.skill-bar{
+    height:12px;
+    background:#111827;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+    background:var(--accent);
+}
+
+/* LINKS */
+
+a{
+    color:var(--accent);
+    text-decoration:none;
+}
+
+.resume-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:12px 18px;
+    border-radius:10px;
+    background:var(--accent);
+    color:black;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    color:var(--muted);
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+@media(max-width:768px){
+
+    body{
+        overflow:auto;
+    }
+
+    html{
+        overflow:auto;
+    }
+
+    nav{
+        flex-direction:column;
+        height:auto;
+        padding:15px;
+        gap:10px;
+    }
+
+    .content-panel{
+        height:auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">Maharshi Chaudhary</div>
+
+<div class="nav-links">
+
+<button class="tab active" onclick="showSection('about', this)">
+About
+</button>
+
+<button class="tab" onclick="showSection('contact', this)">
+Contact
+</button>
+
+<button class="tab" onclick="showSection('resume', this)">
+Resume
+</button>
+
+<button class="tab" onclick="showSection('experience', this)">
+Experience
+</button>
+
+<button class="tab" onclick="showSection('projects', this)">
+Projects
+</button>
+
+<button class="tab" onclick="showSection('skills', this)">
+Skills
+</button>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<img
+src="images/profile_picture.jpg"
+alt="Profile Picture"
+class="profile-pic">
+
+<h1>Maharshi Chaudhary</h1>
+
+<p>
+Software Engineer | Full Stack Developer
+</p>
+
+</section>
+
+<!-- CONTENT -->
+
+<div class="content-container">
+
+<div class="content-panel">
+
+<!-- ABOUT -->
+
+<div id="about" class="section active">
+
+<h2>About Me</h2>
+
+<p>
+AI Engineer and Full-Stack Developer focused on building intelligent, scalable systems that bridge machine learning and real-world 
+applications. Experienced in developing mobile and backend solutions alongside deep learning models, including computer 
+vision and semantic segmentation. Proficient in Python, TensorFlow, Keras, and modern web and mobile technologies, with a 
+strong emphasis on clean architecture, performance, and user experience. A proactive problem solver who thrives in collaborative 
+environments and continuously adapts to emerging technologies
+</p>
+
+</div>
+
+<!-- CONTACT -->
+
+<div id="contact" class="section">
+
+<h2>Contact Details</h2>
+
+<p class="details">
+    <img 
+    src="images/email.png"
+    alt="mail"
+    height="30"
+    width="30">
+
+    <a href="mailto:mmchaudhary37@gmail.com">
+        mmchaudhary37@gmail.com
+    </a>
+</p>
+<p class="details">
+    <img
+src="images/location.png"
+alt="location"
+height="30"
+width="30">
+    Sydney, Australia
+</p>
+
+<p class="details">
+<img
+src="images/github.png"
+alt="github"
+height="30"
+width="30">
+<a href="https://github.com/mhchy2020">
+github.com/mhchy2020
+</a>
+</p>
+
+<p class="details">
+<img
+src="images/linkedin.png"
+alt="linkedin"
+height="30"
+width="30">
+<a href="https://www.linkedin.com/in/mm37/
+">
+linkedin.com/in/mm37
+</a>
+</p>
+
+</div>
+
+<!-- RESUME -->
+
+<div id="resume" class="section">
+
+<h2>Resume</h2>
+
+<p>
+Download my latest resume below.
+</p>
+
+<a
+class="resume-btn"
+href="Maharshi_Chaudhary.pdf"
+target="_blank">
+Download Resume
+</a>
+
+</div>
+
+<!-- EXPERIENCE -->
+
+<div id="experience" class="section">
+
+<h2>Experience</h2>
+
+<div class="experience">
+
+<h3>Citixp</h3>
+
+<p>
+<i>Software developer | Aug 2025 - May 2026</i><br><br>
+• Developed and maintained a cross-platform mobile
+application using React Native and Expo<br>
+• Built backend services using Next.js, Prisma ORM,
+PostgreSQL and Clerk authentication<br>
+• Built and maintained backend services using Next.js, including RESTful APIs, server-side logic, and
+database integration<br>
+• Designed and managed the database layer using Prisma ORM with Neon (PostgreSQL) for
+scalable and efficient data access<br>
+• Implemented authentication and user management using Clerk, ensuring secure login and
+session handling<br>
+• Used TypeScript across the frontend and backend to improve type safety, maintainability, and code 
+quality<br>
+• Deployed backend services on Vercel, ensuring reliable production builds and environment
+configuration<br>
+• Managed source control and collaboration using GitHub, including feature branching, pull
+requests, and code reviews<br>
+• Collaborated in CI/CD workflows, debugging production issues and contributing to clean, scalable
+codebases<br>
+• Worked closely with designers and developers to bridge frontend and backend development in a
+full-stack environment<br>
+</p>
+
+</div>
+
+</div>
+
+<!-- PROJECTS -->
+
+<div id="projects" class="section">
+
+<h2>Projects</h2>
+
+<div class="project">
+    <h3>UNSW – CeleSte Conference Management System</h3>
+    <p><i>Frontend Developer</i><br><br>
+        • Developed a conference management application to assist attendees with event logistics<br>
+        • The app includes features like ticket purchasing, session booking with waitlisting, direct messaging, and a discussion forum<br>
+        • Built using React native with Expo CL<br>
+    </p>
+</div>
+
+<div class="project">
+<h3>Semantic Segmentation</h3>
+<p>
+    <i>AI engineer</i><br><br>
+•  Created Deeplabv3 model from scratch using Python and Keras<br>
+•  Trained model in RUDG dataset to segment 15 terrains in the images<br>
+•  Achieved an overall accuracy of 85%<br>
+</p>
+</div>
+
+<div class="project">
+<h3>Sea Turtle Instance Segmentation</h3>
+<p>
+    <i>AI Engineer</i><br><br>
+•  Collaborated with the team to create three neural network models: U-Net, DeeplabV3, and PSPNet<br>
+•  Trained these models on dataset SeaTurtleID2022 to classify 3 instances of the turtle’s body<br>
+</p>
+</div>
+
+<div class="project">
+<h3>Web Search Engine</h3>
+<p>
+    <i>Python Developer</i><br><br>
+•  Built a search engine for 1,000 documents using a JSON-formatted inverted index<br>
+•  Integrated word preprocessing, NLTK-based lemmatization, and spell correction<br>
+•  Ensured query response time under 10 seconds<br>
+</p>
+</div>
+
+</div>
+
+<!-- SKILLS -->
+
+<div id="skills" class="section">
+
+<h2>Technical Skills</h2>
+
+<div class="skill">
+<div class="skill-title">React Native</div>
+<div class="skill-bar">
+<div class="fill" style="width:90%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-title">TypeScript</div>
+<div class="skill-bar">
+<div class="fill" style="width:85%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-title">Next.js</div>
+<div class="skill-bar">
+<div class="fill" style="width:85%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-title">Node.js</div>
+<div class="skill-bar">
+<div class="fill" style="width:80%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-title">PostgreSQL</div>
+<div class="skill-bar">
+<div class="fill" style="width:75%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-title">Python</div>
+<div class="skill-bar">
+<div class="fill" style="width:80%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-title">AWS</div>
+<div class="skill-bar">
+<div class="fill" style="width:60%"></div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<a href="https://github.com/mhchy2020">GitHub</a>
+
+<a href="https://www.linkedin.com/in/mm37/
+">LinkedIn</a>
+
+<a href="mailto:mmchaudhary37@gmail.com">Email</a>
+
+</footer>
+
+<script>
+
+function showSection(sectionId, button){
+
+document.querySelectorAll('.section')
+.forEach(section=>{
+section.classList.remove('active');
+});
+
+document.querySelectorAll('.tab')
+.forEach(tab=>{
+tab.classList.remove('active');
+});
+
+document.getElementById(sectionId)
+.classList.add('active');
+
+button.classList.add('active');
+}
+
+</script>
+
+</body>
+</html>
